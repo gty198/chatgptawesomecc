@@ -12,11 +12,19 @@
             text-align: center;
         }
         h1 {
-            color: #333;
+            color: #444;
+            text-align: left;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .button {
             display: inline-block;
@@ -31,6 +39,32 @@
         .button:hover {
             background-color: #0056b3;
         }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li {
+            margin: 10px;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: scale(1.05);
+        }
+        a {
+            text-decoration: none;
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 <link rel="icon" href="https://img.btc211.top/file/1179bedfa895d54ff5041.png" type="image/x-icon">
 </head>
@@ -44,8 +78,13 @@
         <a href="https://www.bing.com/chat" class="button" target="_blank">BingCHAT</a>
     </div>
     <!-- 友情链接 --> 
+<div class="container">
+<h1>友情链接</h1>
+<ul>
 <div class="grid-item"><a href="https://chatgptawesome.cc/" target="_blank"><i class="fa-brands fa-telegram"></i></i>AI导航</a></div>     
 <div class="grid-item"><a href="https://img.btc211.top" target="_blank"><i class="fa-brands fa-telegram"></i></i>211图床</a></div>   
-<div class="grid-item"><a href="https://btc211.com" target="_blank"><i class="fa-brands fa-telegram"></i></i>211explorer</a></div>      
+<div class="grid-item"><a href="https://btc211.com" target="_blank"><i class="fa-brands fa-telegram"></i></i>211explorer</a></div> 
+</ul>
+</div>
 </body>
 </html>
