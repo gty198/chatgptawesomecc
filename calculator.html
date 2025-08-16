@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <script>
+        function calculateTime(operation) {
+            const time1 = document.getElementById('time1').value.split(':');
+            const time2 = document.getElementById('time2').value.split(':');
+
+            let hours1 = parseInt(time1[0]);
+            let minutes1 = parseInt(time1[1]);
+            let hours2 = parseInt(time2[0]);
+            let minutes2 = parseInt(time2[1]);
+
+            let resultHours = hours1;
+            let resultMinutes = minutes1;
+
+            if (operation === 'add') {
+                resultHours += hours2;
+                resultMinutes += minutes2;
+            } else if (operation === 'subtract') {
+                resultHours -= hours2;
+                resultMinutes -= minutes2;
+            }
+
+            // Handle minutes overflow and underflow
+            if (resultMinutes >= 60) {
+                resultHours += Math.floor(resultMinutes / 60);
+                resultMinutes = resultMinutes % 60;
+            } else if (resultMinutes < 0) {
+                resultHours -= Math.ceil(Math.abs(resultMinutes) / 60);
+                resultMinutes = (60 + resultMinutes) % 60;
+            }
+
+            document.getElementById('result').innerText = 
+                `Result: ${resultHours} hours and ${resultMinutes} minutes`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Time Calculator</h1>
+    <label for="time1">Enter time 1 (HH:MM): </label>
+    <input type="text" id="time1" placeholder="0:00"><br>
+    <label for="time2">Enter time 2 (HH:MM): </label>
+    <input type="text" id="time2" placeholder="0:00"><br>
+    <button onclick="calculateTime('add')">Add</button>
+    <button onclick="calculateTime('subtract')">Subtract</button>
+    <h2 id="result"></h2>
+</body>
+</html>
